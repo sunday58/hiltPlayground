@@ -5,6 +5,7 @@ import com.app.hiltplayground.model.Blog
 import com.app.hiltplayground.repository.Repository
 import com.app.hiltplayground.utils.DataState
 import dagger.assisted.Assisted
+import dagger.assisted.AssistedInject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -16,7 +17,6 @@ class MainViewModel
 @Inject
 constructor(
     private val mainRepository: Repository,
-    @Assisted private val savedStateHandle: SavedStateHandle
 ): ViewModel(){
 
 
