@@ -65,6 +65,8 @@ dependencies {
 
     implementation "androidx.fragment:fragment-ktx:1.4.1"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+
+    implementation "com.github.skydoves:sandwich:1.2.3"
 }
 
 kapt{

@@ -3,6 +3,7 @@ package com.app.hiltplayground.di
 import com.app.hiltplayground.apiSource.BlogRetrofit
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.skydoves.sandwich.coroutines.CoroutinesResponseCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,6 +30,7 @@ object ApiModule {
     fun providesRetrofit(gson: Gson): Retrofit.Builder{
         return Retrofit.Builder()
             .baseUrl("https://open-api.xyz/placeholder/")
+            .addCallAdapterFactory(CoroutinesResponseCallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create(gson))
     }
 

@@ -34,8 +34,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
     private fun subscribeObservers(){
         viewModel.dataState.observe(this, { dataState ->
             run {
@@ -51,6 +49,10 @@ class MainActivity : AppCompatActivity() {
 
                     is DataState.Loading -> {
                         displayProgressBar(true)
+                    }
+                    is DataState.otherError -> {
+                        displayProgressBar(false)
+                        displayError(dataState.error)
                     }
                 }
             }
